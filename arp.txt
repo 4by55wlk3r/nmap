@@ -1,0 +1,14 @@
+Address Resolution Protocol
+
+To know which hosts are up and running its essential to avoid wasting our time port scanning offline host or an IP address not in use.
+
+When a privileged user tries to scan targets on a local network, nmap uses arp requests.(privileged user is root or a user who belongs to sudoers and can run sudo or admin in windows.)
+
+When a privileged user tries to scan targets outside the local network, Nmap uses ICMP echo requests, TCP ACK to port 80, TCP SYN to port 443, and ICMP time stamp request.
+
+When an unpriviliged user tries to scan targets outside the local network nmap resorts to a tcp 3 way handshake by sending syn packets to ports 80 and 443
+
+ARP scan is possible only if you are on the same subnet as the target systems. On an Ethernet and wifi, you need to know the MAC address for the link layer header; the header contains the source MAC address and the destination MAC addresses among other fields. To get the MAC address, the OS sends an ARP query . A host that replies to ARP queries is up.
+
+If you want nmap to perform an arp scan without port scanning you can use nmap -PR -sn TARGETS
+-PR indicates you only want an ARP scan.

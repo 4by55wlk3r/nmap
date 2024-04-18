@@ -1,0 +1,19 @@
+Which systems are up?
+What services are running on these systems?
+
+Nmap can use certain scans to discover and identify hosts:
+ARP scan: This scan uses ARP requests to discover live hosts
+ICMP scan: This scan uses ICMP requests to identify live hosts
+TCP/UDP ping scan: This scan sends packets to TCP ports and UDP ports to determine live hosts.
+
+NMAP is short for network mapper.
+
+Network segment refers to a physical connection, while a subnetwork refers to a logical connection.
+
+A subnetwork or simply a subnet has its own ip address range and is connected to a more extnsive network via a router. You can use an ARP scan to find other devices on your network. ARP is a link-layer protocol and ARP packets are bound to their subnet.
+
+nmap 10.11.12.15-20    (This command will scan 6 ip addresses)
+
+You can also provide a file as input for your list of targets:
+nmap -iL list_of_hosts.txt
+
